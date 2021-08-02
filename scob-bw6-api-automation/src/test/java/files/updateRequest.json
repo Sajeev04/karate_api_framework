@@ -1,0 +1,57 @@
+{
+	"updateCOBProcessRequest": {
+		"action": "DATAENTRYCOMPLETE",
+		"requestDetails": {
+			"communicationDetails": {
+				"emailID": "t@t.com",
+				"contactNumber": "+31612345678"
+			},
+			"questionnair": {
+				"questions": [
+					{
+						"id": 1,
+						"type": "CAAML",
+						"question": "Verwacht u dat meer dan 20%  van alle bij- en afschrijvingen op uw nieuwe zakelijke rekening van of naar rekeningen in het buitenland gaat?",
+						"answer": "Nee"
+					},
+					{
+						"id": 2,
+						"type": "CAAML",
+						"question": "Verwacht u zaken te doen in Iran, Noord-Korea, Cuba of Syrië?",
+						"answer": "Nee"
+					},
+					{
+						"id": 4,
+						"type": "CAAML",
+						"question": "Van hoeveel procent van de inkomsten en uitgaven verwacht u dat het transacties in muntgeld en/of bankbiljetten zijn?",
+						"answer": "Minder dan 5%"
+					},
+					{
+						"id": 5,
+						"type": "CAAML",
+						"question": "Bent u actief in één of meer van deze branches?",
+						"answer": "Nee"
+					},
+					{
+						"id": 6,
+						"type": "CAAML",
+						"question": "Bent u leverancier of producent van defensiematerieel of op een andere manier betrokken bij de sector defensie?",
+						"answer": "Nee"
+					},
+					{
+						"id": 7,
+						"type": "CAAML",
+						"question": "Heeft een financiële instelling, inclusief ABN AMRO, in het verleden de zakelijke relatie met uw onderneming beëindigd of geweigerd?",
+						"answer": "Nee"
+					},
+					{
+						"id": 8,
+						"type": "CAAML",
+						"question": "Heeft een financiële instelling, inclusief ABN AMRO, in het verleden de relatie met de handelend bestuurder of uiteindelijk belanghebbende beëindigd of geweigerd?",
+						"answer": "Nee"
+					}
+				]
+			}
+		}
+	}
+}

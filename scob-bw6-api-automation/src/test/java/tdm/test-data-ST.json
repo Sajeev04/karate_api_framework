@@ -1,0 +1,402 @@
+{
+	"sbcob_e2e": {
+		"bc": "104730188",
+		"account": "508294886",
+		"pass": "474",
+		"kvk": "01047139",
+		"email": "t@t.com",
+		"phone": "+31685568349",
+		"runFlag": false
+	},
+	"create_cob_process": [
+		{
+			"bc": "193432072",
+			"account": "508294886",
+			"pass": "474",
+			"status": "200",
+			"messageKey": "MESSAGE_BPMCOB_0000",
+			"executionKey": "NaturalPerson",
+			"messageType": "INFO",
+			"runFlag": true
+		},
+		{
+			"bc": "176825142",
+			"account": "625577426",
+			"pass": "026",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4005",
+			"executionKey": "InvalidAppType",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": true
+		},
+		{
+			"bc": "177312130",
+			"account": "574695761",
+			"pass": "831",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4004",
+			"executionKey": "BussinessAppType",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "13141856",
+			"account": "517865394",
+			"pass": "241",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4001",
+			"executionKey": "RiskScore1Aor2A",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "65835476",
+			"account": "558924085",
+			"pass": "045",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4006",
+			"executionKey": "InvalidUserClass",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "129644757",
+			"account": "449411761",
+			"pass": "476",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_3020",
+			"executionKey": "RetailCustNotLevel4",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "22735372",
+			"account": "843073071",
+			"pass": "282",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4007",
+			"executionKey": "MinorCheck",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "104212241",
+			"account": "521169135",
+			"pass": "914",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4013",
+			"executionKey": "InvalidDocId",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		},
+		{
+			"bc": "104212241",
+			"account": "562732616",
+			"pass": "964",
+			"status": "500",
+			"messageKey": "MESSAGE_BPMCOB_4003",
+			"executionKey": "InvalidBSN",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"runFlag": false
+		}
+	],
+	"kvk_search": [
+		{
+			"kvk": "01043070",
+			"messageKey": "MESSAGE_GENSERV_0000",
+			"status": "200",
+			"messageType": "INFO",
+			"executionKey": "kvkSearchSuccess",
+			"runFlag": false
+		},
+		{
+			"kvk": "12345678",
+			"messageKey": "MESSAGE_BPMCOB_3022",
+			"status": "404",
+			"messageType": "EMPTY_RESULT_ERROR",
+			"executionKey": "kvkNotFound",
+			"runFlag": false
+		},
+		{
+			"kvk": "12er56789",
+			"messageKey": "MESSAGE_BPMCOB_3023",
+			"status": "400",
+			"messageType": "RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "InvalidKvKNumber",
+			"runFlag": false
+		}
+	],
+	"company_elg_check": [
+		{
+			"kvk": "01043070",
+			"messageKey": "MESSAGE_BPMCOB_0000",
+			"status": "200",
+			"messageType": "INFO",
+			"executionKey": "Eenmanszaak"
+		},
+		{
+			"kvk": "01062543",
+			"messageKey": "MESSAGE_BPMCOB_0000",
+			"status": "200",
+			"messageType": "INFO",
+			"executionKey": "BVWithOneOwner"
+		},
+		{
+			"kvk": "01001660",
+			"messageKey": "MESSAGE_BPMCOB_3011",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_VOF"
+		},
+		{
+			"kvk": "01031477",
+			"messageKey": "MESSAGE_BPMCOB_3017",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_BV_invalidStructure"
+		},
+		{
+			"kvk": "01027160",
+			"messageKey": "MESSAGE_BPMCOB_3012",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_Stamrech_Pensioenrecht"
+		},
+		{
+			"kvk": "01000222",
+			"messageKey": "MESSAGE_BPMCOB_3013",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_Vereniging"
+		},
+		{
+			"kvk": "01002970",
+			"messageKey": "MESSAGE_BPMCOB_3014",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_Stiching"
+		},
+		{
+			"kvk": "01149197",
+			"messageKey": "MESSAGE_BPMCOB_3018",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Invalid_LegalForm"
+		},
+		{
+			"kvk": "01000065",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Bankrupt_FAIL"
+		},
+		{
+			"kvk": "01000215",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Bankrupt_SURS"
+		},
+		{
+			"kvk": "01000100",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Bankrupt_SSAN"
+		},
+		{
+			"kvk": "01000222",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Bankrupt_enddate"
+		},
+		{
+			"kvk": "01015801",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_Bankrupt_FAIL"
+		},
+		{
+			"kvk": "01016110",
+			"messageKey": "MESSAGE_BPMCOB_4009",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_Bankrupt_SURS"
+		},
+		{
+			"kvk": "72034920",
+			"messageKey": "MESSAGE_BPMCOB_0000",
+			"status": "200",
+			"messageType": "INFO",
+			"executionKey": "BV_oneDGACheck"
+		},
+		{
+			"kvk": "01000101",
+			"messageKey": "MESSAGE_BPMCOB_3016",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_bestuursfunAndOverigeFuncDetailsNotEqual"
+		},
+		{
+			"kvk": "01000116",
+			"messageKey": "MESSAGE_BPMCOB_3016",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_bestuursfuncMoreThanOne"
+		},
+		{
+			"kvk": "01000325",
+			"messageKey": "MESSAGE_BPMCOB_3016",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_OverigeFuncNotPresent"
+		},
+		{
+			"kvk": "01000365",
+			"messageKey": "MESSAGE_BPMCOB_3000",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Enemanzack_NoSBICODE"
+		},
+		{
+			"kvk": "01000103",
+			"messageKey": "MESSAGE_BPMCOB_3000",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "Enemanzack_NoLastName"
+		},
+		{
+			"kvk": "01017400",
+			"messageKey": "MESSAGE_BPMCOB_3000",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_NoSBICODE"
+		},
+		{
+			"kvk": "01000402",
+			"messageKey": "MESSAGE_BPMCOB_3000",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "BV_NoLastName"
+		},
+		{
+			"kvk": "01031347",
+			"messageKey": "MESSAGE_BPMCOB_4011",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "CompanyStartDateNotValid"
+		},
+		{
+			"kvk": "01020848",
+			"messageKey": "MESSAGE_BPMCOB_3019",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "CompanyNotNL"
+		},
+		{
+			"kvk": "01010988",
+			"messageKey": "MESSAGE_BPMCOB_3004",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "MaxSTPLimitReached"
+		},
+		{
+			"kvk": "01025306",
+			"messageKey": "MESSAGE_BPMCOB_3003",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "AMXCaseTriggered"
+		},
+		{
+			"kvk": "01000222",
+			"messageKey": "MESSAGE_BPMCOB_3024",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_VerenigingVanEigenaars_VvE"
+		},
+		{
+			"kvk": "01000215",
+			"messageKey": "MESSAGE_BPMCOB_3025",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_NaamlozeVennootschap_NV"
+		},
+		{
+			"kvk": "01000100",
+			"messageKey": "MESSAGE_BPMCOB_3026",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_EuropeseCooperatieveVennootschap_SCE"
+		},
+		{
+			"kvk": "17193337",
+			"messageKey": "MESSAGE_BPMCOB_3027",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "LegalForm_EuropeseNaamlozeVennootschap_SE"
+		},
+		{
+			"kvk": "01002773",
+			"messageKey": "MESSAGE_BPMCOB_3028",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "MedicalCompany"
+		},
+		{
+			"kvk": "01063260",
+			"messageKey": "MESSAGE_BPMCOB_3029",
+			"status": "500",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "UnacceptableSbiCompany"
+		},
+		{
+			"kvk": "01635478",
+			"messageKey": "MESSAGE_BPMCOB_1013",
+			"status": "503",
+			"messageType": "NON_RECOVERABLE_VALIDATION_ERROR",
+			"executionKey": "NoDataForKvkSearch"
+		}
+	],
+	"unhappy": [
+		{
+			"bc": "100020038",
+			"account": "508294886",
+			"pass": "474",
+			"kvk": "01049474",
+			"taxInNL": "true",
+			"messageKey": "MESSAGE_BPMCOB_5013",
+			"executionKey": "BlackListSBICodeAndKeyword"
+		}
+	],
+	"eva_rdc_hit": {
+		"kvk": "27292802"
+	},
+	"perform_activity": [
+		{
+			"kvk": "27292802",
+			"bookkeepingFlag": "N",
+			"payloadReq": "{\"performActivityRequest\":{\"action\":\"SUBMIT\"}}",
+			"executionKey": "eva_rdc_hit"
+		},
+		{
+			"kvk": "01047139",
+			"bookkeepingFlag": "Y",
+			"payloadReq": "{\"performActivityRequest\":{\"action\":\"SUBMIT\",\"nameValuePair\":[{\"name\":\"BOOKKEEPING_OPTED\",\"value\":\"Y\"},{\"name\":\"BOOKKEEPING_PRODUCT_TYPE\",\"value\":\"004406\"}]}}",
+			"executionKey": "successWithBookkeepingOpted"
+		},
+		{
+			"kvk": "01047139",
+			"bookkeepingFlag": "Y",
+			"payloadReq": "{\"performActivityRequest\":{\"action\":\"SUBMIT\"}}",
+			"executionKey": "successWithBookkeepingNotOpted"
+		},
+		{
+			"kvk": "01049474",
+			"bookkeepingFlag": "N",
+			"payloadReq": "{\"performActivityRequest\":{\"action\":\"SUBMIT\"}}",
+			"executionKey": "unhappyWithNoBookKeepingNotEligible"
+		}
+	]
+}

@@ -1,0 +1,62 @@
+ /*properties([
+  parameters([
+    choice(name: 'ENVIRONMENT_RUN', choices: 'ST\nET', description: 'Environment to run')
+  ])
+])*/
+node('linux'){
+	String mvnHomeLinux = tool name: 'Linux Maven 3.3.3', type: 'maven';
+    String jdkHome = tool name: 'Linux Oracle JDK 1.8.0.221', type: 'jdk';
+	String  jobStage
+	String Result
+	String VERSION;
+	echo "-DargLine=\"-Dkarate.env=${params.ENVIRONMENT_RUN}\""
+	
+
+	try{
+    	env.JAVA_HOME="${jdkHome}"
+		env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"		
+		sh 'java -version'
+		echo jobStage
+		stage('Project Checkout'){			
+				jobStage='Project Checkout'
+				withEnv(["PATH+M2_HOME=${mvnHomeLinux}/bin"]) {
+				def git_branch='master'
+				checkout([$class: 'GitSCM', branches: [[name: git_branch]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'scob']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'BPM_BUILDER', url: 'https://p-bitbucket.nl.eu.abnamro.com:7999/scm/scob/scob-api-automation.git']]])
+			}		
+		}
+		
+		stage('API Testing (Karate)') {
+			jobStage='Karate Test'
+			
+				try{
+				withEnv(["PATH+M2_HOME=${mvnHomeLinux}/bin"]){
+				    dir('scob/'){
+					sh "ls -lrt"
+					sh "pwd"
+					sh "mvn --global-settings  ./settings.xml -X clean test -Dtest=CucumberRunner -Dkarate.options=\"--tags @happy-flow\" -Dkarate.env=${params.ENVIRONMENT_RUN}"
+				    }
+				}
+				    Result='Success'
+
+				}catch(e){
+					Result='Fail'
+				}	
+				finally{
+				echo "${params.ENVIRONMENT_RUN}"
+					if(Result=='Success'){
+					//Send Success Mail to Team member.					
+					echo 'line 130'
+					emailext attachLog: true,attachmentsPattern: '**/target/karate.log', body: 'Kindly find attached health check report for the mentioned build ,Pipeline Job Name: -${JOB_NAME} & Build Number-${BUILD_NUMBER}',  subject: "SCOB API Testing health check has been successfully completed for ${ENVIRONMENT_RUN} environment", to: 'p.prabhakar@nl.abnamro.com;sandeep.thalla@nl.abnamro.com;sajeev.sethumadhavan@nl.abnamro.com;harshada.devkar@nl.abnamro.com;kinjal.tank@nl.abnamro.com;manjunath.mallya.konaje@nl.abnamro.com'
+					}else{
+					emailext attachLog: true,attachmentsPattern: '**/target/karate.log', body: 'Kindly find attached health check report for the mentioned build ,Pipeline Job Name: -${JOB_NAME} & Build Number-${BUILD_NUMBER}', subject: "SCOB API Testing health check has been failed for ${ENVIRONMENT_RUN} environment", to: 'p.prabhakar@nl.abnamro.com;sandeep.thalla@nl.abnamro.com;sajeev.sethumadhavan@nl.abnamro.com;harshada.devkar@nl.abnamro.com;kinjal.tank@nl.abnamro.com;manjunath.mallya.konaje@nl.abnamro.com'
+          			}
+          		}
+          	
+        }
+    }catch(e){
+           
+       }
+       finally{
+		echo Result
+	}   
+}
